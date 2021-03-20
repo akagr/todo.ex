@@ -1,0 +1,7 @@
+# Git data
+.git
+
+# Elixir build
+_build
+deps
+assets/node_modules
