@@ -9,20 +9,20 @@
     <link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
     <script defer phx-track-static type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </head>
-  <body>
+  <body class="p-4 lg:w-9/12 xl:w-1/2 mx-auto">
     <header>
-      <section class="container">
-        <nav role="navigation">
-          <ul>
+      <section class="flex flex-col md:flex-row justify-between items-stretch py-6 border-b-2">
+        <a href="https://phoenixframework.org/" class="w-full md:w-1/2">
+          <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
+        </a>
+        <nav role="navigation" class="p-2">
+          <ul class="flex space-x-5 h-full justify-end">
             <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
             <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
               <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
             <% end %>
           </ul>
         </nav>
-        <a href="https://phoenixframework.org/" class="phx-logo">
-          <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
-        </a>
       </section>
     </header>
     <%= @inner_content %>

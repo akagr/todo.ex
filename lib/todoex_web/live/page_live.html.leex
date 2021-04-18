@@ -1,22 +1,22 @@
-<section class="phx-hero">
+<section class="container flex flex-col text-center mx-auto bg-gray-200 p-10 rounded">
   <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
   <p>Peace of mind from prototype to production</p>
 
-  <form phx-change="suggest" phx-submit="search">
-    <input type="text" name="q" value="<%= @query %>" placeholder="Live dependency search" list="results" autocomplete="off"/>
+  <form class="py-4 flex flex-col space-y-2 md:flex-row mx-auto md:space-x-2 md:space-y-0" phx-change="suggest" phx-submit="search">
+    <input class="input" type="text" name="q" value="<%= @query %>" placeholder="Live dependency search" list="results" autocomplete="off"/>
     <datalist id="results">
       <%= for {app, _vsn} <- @results do %>
         <option value="<%= app %>"><%= app %></option>
       <% end %>
     </datalist>
-    <button type="submit" phx-disable-with="Searching...">Go to Hexdocs</button>
+    <button class="btn btn-blue" type="submit" phx-disable-with="Searching...">Go to Hexdocs</button>
   </form>
 </section>
 
-<section class="row">
-  <article class="column">
+<section class="flex flex-col md:flex-row py-4 content-center space-y-2 md:space-y-0">
+  <article class="flex flex-col md:flex-grow">
     <h2>Resources</h2>
-    <ul>
+    <ul class="list-disc list-inside">
       <li>
         <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
       </li>
@@ -28,9 +28,9 @@
       </li>
     </ul>
   </article>
-  <article class="column">
+  <article class="flex flex-col md:flex-grow">
     <h2>Help</h2>
-    <ul>
+    <ul class="list-disc list-inside">
       <li>
         <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
       </li>
